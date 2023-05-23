@@ -129,7 +129,7 @@ def UpdateTask(id, props, key):
   response = requests.patch(url,json=data, headers=headers)
   
 
-if __name__ == '__main__':
+def Task():
     file = open("config.json", "r")
     config = json.loads(file.read())
     file.close()
@@ -138,7 +138,6 @@ if __name__ == '__main__':
     records = getDatabase(db_id, key)
     tasks = selectData(records)
 
-    #time = datetime.datetime.strptime('2020-12-16', "%Y-%m-%d")
     currentDate = datetime.today()
     updateData = list()
     for task in tasks:
